@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Number Facts Lucky Dip</title>
+    <style>
+        :root {
+        --date: #FFADAD;
+        --year: #FFD6A5;
+        --math: #FDFFB6;
+        --trivia: #CAFFBF;
+        }
+
+        * {
+        margin: 0;
+        font-family: Tahoma,sans-serif;
+        }
+
+        body {
+        margin: 0 auto;
+        background-color: black;
+        color: white;
+        width: 75vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+
+        h1 {
+        font-weight: bold;
+        font-size: 35px;
+        text-align: center;
+        }
+
+        @media only screen and (max-width: 325px) {
+            h1 {
+            font-size: 30px;
+            }
+        }
+
+        hr {
+        width: 150px;
+        }
+
+
+        h1:nth-of-type(1) {
+        padding-top: 50px;
+        }
+
+        h1:nth-of-type(2) {
+        padding-bottom: 50px;
+        }
+
+        h2 {
+        font-size: 20px;
+        font-weight: normal;
+        padding-bottom: 25px;
+        text-align: center;
+        }
+
+        section {
+        border: solid 2px;
+        width: 50%;
+        height: 50px;
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        }
+
+        .date-border {
+        border-color: var(--date);
+        }
+
+        .year-border {
+        border-color: var(--year);
+        }
+
+        .math-border {
+        border-color: var(--math);
+        }
+
+        .trivia-border {
+        border-color: var(--trivia);
+        }
+
+        .number {
+        text-decoration: none;
+        color: black;
+        }
+
+        .date-border .number {
+        color: var(--date);
+        }
+
+        .year-border .number {
+        color: var(--year);
+        }
+
+        .math-border .number {
+        color: var(--math);
+        }
+
+        .trivia-border .number {
+        color: var(--trivia);
+        }
+
+        .number:hover {
+        font-weight: bold;
+        color: white;
+        }
+
+        footer {
+        font-size: 10px;
+        text-align: center;
+        }
+
+        footer a {
+        text-decoration: none;
+        color: yellow;
+        }
+
+        footer a:hover {
+        color: red;
+        font-weight: bold;
+        padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>Number Facts</h1>
+<hr>
+<h1>Lucky Dip</h1>
+<h2>Here are your lucky numbers</h2>
+<p style="font-size:10px; margin-top:-10px; margin-bottom:10px;">Click on a number to receive a fact!</p>
+<section class="date-border">
+    <p class="button">Date</p>
+    <a href="/date-fact?date={{ date_fact[0] }}" class="number">{{ date_fact[0] }}</a>
+</section>
+<section class="year-border">
+    <p class="button">Year</p>
+    <a href="/year-fact/{{ year_fact[0] }}" class="number">{{ year_fact[0] }}</a>
+</section>
+<section class="math-border">
+    <p class="button">Math</p>
+    <a href="/math-fact/{{ math_fact[0] }}" class="number">{{ math_fact[0] }}</a>
+</section>
+<section class="trivia-border">
+    <p class="button">Trivia</p>
+    <a href="/trivia-fact/{{ trivia_fact[0] }}" class="number">{{ trivia_fact[0] }}</a>
+</section>
+</body>
+<footer>
+    <p>This website uses</p>
+    <a href="https://rapidapi.com/divad12/api/numbers-1" target="_blank">divad12's Numbers API</a>
+</footer>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Number Facts Lucky Dip</title>
+    <style>
+        :root {
+        --date: #FFADAD;
+        --year: #FFD6A5;
+        --math: #FDFFB6;
+        --trivia: #CAFFBF;
+        }
+
+        * {
+        margin: 0;
+        font-family: Tahoma,sans-serif;
+        }
+
+        body {
+        margin: 0 auto;
+        background-color: black;
+        color: white;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        max-width: 75vw;
+        }
+
+        @media only screen and (min-width: 1201px) {
+            body {
+            max-width: 50vw;
+            }
+        }
+
+
+        h1 {
+        font-weight: bold;
+        font-size: 35px;
+        padding-top: 50px;
+        padding-bottom: 25px;
+        margin: 0 auto;
+        text-align: center;
+        }
+
+        @media only screen and (max-width: 480px) {
+            h1 {
+            font-size: 30px;
+            }
+        }
+
+        section {
+        width: 75%;
+        padding: 25px 0;
+        margin: 0 auto;
+        text-align: center;
+        }
+
+        .chosen-number{
+        margin-bottom: 25px;
+        font-size: 25px;
+        }
+
+        .try-again {
+        margin: 25px auto;
+        text-decoration: none;
+        background-image: linear-gradient(to left, var(--date), var(--year), var(--math), var(--trivia));
+        -webkit-background-clip: text;
+        color: transparent;
+        }
+
+        .try-again:hover {
+        font-weight: bold;
+        background-image: linear-gradient(to right, var(--date), var(--year), var(--math), var(--trivia));
+        }
+
+        footer {
+        font-size: 10px;
+        text-align: center;
+        }
+
+        footer a {
+        text-decoration: none;
+        color: yellow;
+        }
+
+        footer a:hover {
+        color: red;
+        font-weight: bold;
+        padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>Here is your lucky {{ get_fact[2] }} fact</h1>
+<hr>
+<section>
+    <p class="chosen-number">{{ get_fact[0] }}</p>
+    <p class="fact">{{ get_fact[1] }}</p>
+</section>
+<hr>
+<a class="try-again" href="../../">Try again?</a>
+</body>
+<footer>
+    <p>This website uses</p>
+    <a href="https://rapidapi.com/divad12/api/numbers-1" target="_blank">divad12's Numbers API</a>
+</footer>
+</html>
